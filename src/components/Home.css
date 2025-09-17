@@ -1,0 +1,554 @@
+/* Global Styles */
+.home-container {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Hero Section */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background: url('https://img.freepik.com/free-photo/team-young-specialist-doctors-standing-corridor-hospital_1303-21199.jpg') center/cover no-repeat;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(26, 115, 232, 0.9) 0%, rgba(13, 71, 161, 0.9) 100%);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 4rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  animation: fadeInDown 1s ease-out;
+}
+
+.hero-content p {
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+  opacity: 0.9;
+  animation: fadeInUp 1s ease-out;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.primary-button, .secondary-button {
+  padding: 15px 40px;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.primary-button {
+  background-color: #ffffff;
+  color: #1a73e8;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.secondary-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+}
+
+.primary-button:hover, .secondary-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* Features Section */
+.features-section {
+  padding: 100px 20px;
+  background-color: #f8f9fa;
+}
+
+.features-section h2 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #2c3e50;
+  margin-bottom: 60px;
+  font-weight: 600;
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+@media (min-width: 1200px) {
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.feature-card {
+  background: white;
+  padding: 0;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.feature-image {
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+}
+
+.feature-image.lab-img {
+  background-image: url('https://img.freepik.com/free-photo/medical-banner-with-doctor-holding-test-tubes_23-2149611234.jpg');
+}
+
+.feature-image.emergency-img {
+  background-image: url('https://img.freepik.com/free-photo/ambulance-car-emergency-medical-service_53876-138464.jpg');
+}
+
+.feature-card h3 {
+  color: #2c3e50;
+  margin: 20px;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.feature-card p {
+  color: #666;
+  line-height: 1.6;
+  font-size: 1.1rem;
+  padding: 0 20px 20px;
+}
+
+.appointment-img {
+  background-image: url('https://img.freepik.com/free-photo/doctor-with-his-arms-crossed-white-background_1368-5790.jpg');
+}
+
+.records-img {
+  background-image: url('https://img.freepik.com/free-photo/medical-banner-with-doctor-working-laptop_23-2149611193.jpg');
+}
+
+.support-img {
+  background-image: url('https://img.freepik.com/free-photo/young-handsome-physician-medical-robe-with-stethoscope_1303-17818.jpg');
+}
+
+.prescription-img {
+  background-image: url('https://img.freepik.com/free-photo/pharmacist-holding-medicine-box-capsule-pack_1150-26569.jpg');
+}
+
+.feature-card.clickable {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.feature-card.clickable:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(26, 115, 232, 0.2);
+}
+
+.feature-card.clickable:hover .feature-image {
+  transform: scale(1.05);
+}
+
+.feature-card.clickable:hover .book-now-btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.book-now-btn {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #1a73e8;
+  color: white;
+  padding: 12px 20px;
+  border-radius: 25px;
+  text-align: center;
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.feature-card.clickable:hover p {
+  opacity: 0.7;
+}
+
+.feature-image {
+  transition: transform 0.3s ease;
+}
+
+/* Why Choose Us Section */
+.why-us-section {
+  position: relative;
+  padding: 100px 20px;
+  background: white;
+  display: flex;
+  align-items: center;
+}
+
+.why-us-image {
+  flex: 1;
+  min-height: 600px;
+  background: url('https://img.freepik.com/free-photo/medical-workers-covid-19-vaccination-concept-confident-professional-doctor-female-nurse-blue-scrubs-stethoscope-cross-arms-chest-ready-help-patients_1258-57360.jpg') center/cover no-repeat;
+  border-radius: 15px;
+  margin-right: 50px;
+}
+
+.why-us-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.why-us-grid {
+  display: grid;
+  gap: 30px;
+}
+
+.why-us-item {
+  background: #f8f9fa;
+  padding: 30px;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.why-us-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.why-us-icon {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.doctors-icon {
+  background-image: url('https://img.icons8.com/color/96/000000/doctor-male--v1.png');
+}
+
+.tech-icon {
+  background-image: url('https://img.icons8.com/color/96/000000/medical-doctor.png');
+}
+
+.care-icon {
+  background-image: url('https://img.icons8.com/color/96/000000/heart-health.png');
+}
+
+/* Stats Section */
+.stats-section {
+  position: relative;
+  padding: 80px 20px;
+  background: url('https://img.freepik.com/free-photo/medical-banner-with-doctor-stethoscope_23-2149611207.jpg') center/cover fixed;
+  color: white;
+}
+
+.stats-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(13, 71, 161, 0.9);
+}
+
+.stats-container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.stat-item h3 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.stat-item p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Contact Section */
+.contact-section {
+  display: flex;
+  align-items: center;
+  padding: 100px 20px;
+  background: #f8f9fa;
+}
+
+.contact-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.contact-image {
+  flex: 1;
+  min-height: 500px;
+  background: url('https://img.freepik.com/free-photo/doctor-nurses-special-equipment_23-2148980721.jpg') center/cover no-repeat;
+  border-radius: 15px;
+  margin-left: 50px;
+}
+
+.contact-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+}
+
+.contact-item {
+  background: white;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-icon {
+  width: 50px;
+  height: 50px;
+  margin-bottom: 20px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.emergency-icon {
+  background-image: url('https://img.icons8.com/color/96/000000/ambulance.png');
+}
+
+.email-icon {
+  background-image: url('https://img.icons8.com/color/96/000000/email.png');
+}
+
+.location-icon {
+  background-image: url('https://img.icons8.com/color/96/000000/marker.png');
+}
+
+/* Footer */
+.home-footer {
+  background: #2c3e50;
+  color: white;
+  padding: 60px 20px 20px;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.footer-logo h3 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.footer-links {
+  display: flex;
+  gap: 60px;
+}
+
+.footer-section h4 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.footer-section ul li:hover {
+  color: #1a73e8;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Health Tips Carousel */
+.health-tips-carousel {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tip-container {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.tip-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.tip-text {
+  color: #2c3e50;
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+  padding: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .why-us-section {
+    flex-direction: column;
+  }
+  
+  .why-us-image {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 50px;
+  }
+  
+  .contact-section {
+    flex-direction: column;
+  }
+  
+  .contact-image {
+    width: 100%;
+    margin-left: 0;
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.4rem;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+  
+  .footer-links {
+    flex-direction: column;
+    gap: 30px;
+  }
+  
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-image {
+    height: 200px;
+  }
+
+  .tip-text {
+    font-size: 1rem;
+  }
+} 
